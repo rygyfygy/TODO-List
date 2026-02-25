@@ -1,25 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>TODO</h1>
+    <span>
+      <form id="newProject">
+        <label for="projectInput">Add a new project:</label>
+        <input
+          type="text"
+          id="projectInput"
+          name="projectInput"
+          placeholder="Enter project name"
+          required
+        />
+        <button type="submit">add</button>
+      </form>
+      <form id="newTODO">
+        <label for="todoInput">Add a new task:</label>
+        <input
+          type="text"
+          id="todoInput"
+          name="todoInput"
+          placeholder="Enter task name"
+          required
+        />
+        <button type="submit">add</button>
+      </form>
+    </span>
     <div id="TODO">
-        <div>x</div>
-        <div>x</div>
-        <div>x</div>
-        <div>x</div>
-        <div>x</div>
-        <div>x</div>
-        <div>x</div>
-        <div>x</div>
-        <div>x</div>
-        <div>x</div>
-  
+      <div class="task">
+        <h3>Lorem ipsum</h3>
+        <p>
+          Dolor sit amet, consectetur adipisicing elit. Nisi pariatur quaerat
+          dolorem aliquid laudantium esse praesentium eveniet reiciendis debitis
+          culpa corrupti iusto facere, nihil cupiditate. Illo, nam? Impedit,
+          aliquid labore?
+        </p>
+      </div>
     </div>
-    
-</body>
+  </body>
 </html>

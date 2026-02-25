@@ -1,17 +1,61 @@
+html {
+  font-family: "Courier New", Courier, monospace;
+}
+
 body {
-    background-color: rgb(39, 39, 39);
+  background-color: rgb(39, 39, 39);
+  margin: 0;
 }
 
 h1 {
-    color: whitesmoke;
+  color: whitesmoke;
+  font-family: "Courier New", Courier, monospace;
+  justify-self: center;
 }
 
 #TODO {
-    margin: 1em 1em 1em 1em;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    row-gap: 10rem;
-    >div {
-        color: whitesmoke;
+  margin: 0;
+  padding-top: 3rem;
+  justify-self: center;
+  margin: 1em 1em 1em 1em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  row-gap: 3rem;
+  column-gap: 3rem;
+
+  & .task {
+    justify-self: center;
+    background-color: rgb(245, 245, 245);
+    padding: 2rem;
+    width: 11rem;
+    height: 13rem;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px 1px black;
+    font-size: small;
+    overflow-wrap: break-word;
+
+    & h3 {
+      margin: 0;
     }
+
+    p {
+      font-size: small;
+      overflow-wrap: break-word;
+    }
+  }
+}
+
+span {
+  display: flex;
+  justify-content: space-around;
+}
+
+form {
+  margin: 1rem;
+  color: whitesmoke;
+
+  > label {
+    color: whitesmoke;
+  }
 }
