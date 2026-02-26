@@ -1,0 +1,53 @@
+{
+  projects: [
+    {
+      id: "p1",
+      name: "Inbox",
+      todos: [
+        {
+          id: "t1",
+          title: "Buy milk",
+          description: "",
+          dueDate: null,
+          priority: "low",
+          done: false
+        }
+      ]
+    }
+  ]
+}
+
+
+// let testNode = document.createElement('div');
+// testNode.className = 'task';
+// testNode.textContent = Object.values(test);
+
+// let test2 = new TODO('test2');
+// test2.description('testing2');
+// test2.dueDate('28.02.2026');
+// test2.priority('High');
+// let test2Node = document.createElement('div');
+// test2Node.className = 'task';
+// test2Node.textContent = Object.values(test2);
+
+// let test3 = new TODO('Test3');
+// test3.description('Testing3');
+// test3.dueDate('28.02.2026');
+// test3.priority('High');
+// let test3Node = document.createElement('div');
+// test3Node.className = 'task';
+// test3Node.textContent = JSON.stringify(test3);
+
+// document.querySelector('#TODO').appendChild(testNode);
+// document.querySelector('#TODO').appendChild(test2Node);
+// document.querySelector('#TODO').appendChild(test3Node);
+
+
+// let defaultProject = new Project();
+// defaultProject.addTODO(test);
+// defaultProject.addTODO(test2);
+// defaultProject.addTODO(test3);
+
+// let defaultProjectNode = document.createElement('div');
+// defaultProjectNode.textContent = JSON.stringify(defaultProject.todos);
+// document.querySelector('#TODO').appendChild(defaultProjectNode);
