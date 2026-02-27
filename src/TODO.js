@@ -3,15 +3,15 @@ const TODO = function (title) {
   this.title = title;
 
   // Add/set property methods
-  TODO.prototype.description = function (value) {
+  TODO.prototype.setDescription = function (value) {
     this.description = value;
     return this;
   };
-  TODO.prototype.dueDate = function (value) {
+  TODO.prototype.setDueDate = function (value) {
     this.dueDate = value;
     return this;
   };
-  TODO.prototype.priority = function (value) {
+  TODO.prototype.setPriority = function (value) {
     this.priority = value;
     return this;
   };

@@ -13,7 +13,7 @@ const projectStorage = {
     return JSON.parse(localStorage.getItem("projects"));
   },
 
-  addTask: function (projectName, task) {
+  addTask: function (task, projectName) {
     const projects = this.getProjects();
     const changedProject = projects.find((item) => item.title === projectName);
     changedProject.todos.push(task);

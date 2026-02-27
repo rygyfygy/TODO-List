@@ -1,22 +1,24 @@
 import "./styles.css";
 import TODO from "./TODO.js";
 import Project from "./projects.js";
-import domAddTODO from "./renderer.js";
+import renderTask from "./renderer.js";
 import projectStorage from "./storage.js";
+import form from "./form.js";
+
+form();
 
 projectStorage.init()
 
 let test = new TODO('Test');
-test.description('Testing');
-test.dueDate('28.02.2026');
-test.priority('High');
+test.setDescription('Testing');
+test.setDueDate('28.02.2026');
+test.setPriority('High');
 
-domAddTODO(test);
+renderTask(test);
 
 console.log(projectStorage.getProjects());
 
-
-projectStorage.addTask('defaultProject', test);
+projectStorage.addTask(test, 'defaultProject');
 
 console.log(projectStorage.getProjects());
 

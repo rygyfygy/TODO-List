@@ -7,7 +7,13 @@
   </head>
   <body>
     <header>
-    <svg id="hamburger" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+      <svg
+        id="hamburger"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+      >
+        <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
+      </svg>
       <form id="newProject">
         <label for="projectInput">Add a new project:</label>
         <input
@@ -19,25 +25,47 @@
         />
         <button type="submit">add</button>
       </form>
-      <form id="newTODO">
-        <label for="todoInput">Add a new task:</label>
+      <form id="newTask">
+        <label for="newTaskName">Task name: </label>
         <input
           type="text"
-          id="todoInput"
-          name="todoInput"
+          name="newTaskName"
           placeholder="Enter task name"
           required
         />
+        <input type="date" name="newTaskDue" placeholder="Due: " />
+        <fieldset>
+          <legend>Priority:</legend>
+
+          <div id="priority">
+            <div>
+              <label for="newTaskPriorityL">Low</label>
+              <input type="radio" name="newTaskPriority" value="Low" />
+            </div>
+            <div>
+              <label for="newTaskPriorityM">Medium</label>
+              <input type="radio" name="newTaskPriority" value="Medium" />
+            </div>
+            <div>
+              <label for="newTaskPriorityH">High</label
+              ><input type="radio" name="newTaskPriority" value="High" />
+            </div>
+          </div>
+        </fieldset>
         <button type="submit">add</button>
       </form>
+      <svg id="plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <title>plus-box-outline</title>
+        <path
+          d="M19,19V5H5V19H19M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5C3,3.89 3.9,3 5,3H19M11,7H13V11H17V13H13V17H11V13H7V11H11V7Z"
+        />
+      </svg>
     </header>
     <div id="TODO">
       <div class="task">
         <h3>Lorem ipsum</h3>
         <p>
-          Dolor sit amet, consectetur adipisicing elit. Nisi pariatur quaerat
-          dolorem aliquid laudantium esse praesentium eveniet reiciendis debitis
-          culpa corrupti iusto facere, nihil cupiditate. Illo, nam? Impedit,
+          Dolor sit amet, consectetur adipisicing elit. Illo, nam? Impedit,
           aliquid labore?
         </p>
       </div>

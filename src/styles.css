@@ -1,16 +1,16 @@
+@font-face {
+  font-family: "Anek Devanagari";
+  src: url("./anek-devanagari-v17-latin-regular.woff2") format("woff2");
+  font-style: normal;
+}
+
 html {
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Anek Devanagari";
 }
 
 body {
   background-color: rgb(39, 39, 39);
   margin: 0;
-}
-
-h1 {
-  color: whitesmoke;
-  font-family: "Courier New", Courier, monospace;
-  justify-self: center;
 }
 
 #TODO {
@@ -30,7 +30,7 @@ h1 {
     padding: 2rem;
     width: 11rem;
     height: 13rem;
-    border-radius: 5px;
+    border-radius: 6px;
     box-shadow: 1px 1px 5px 1px black;
     font-size: small;
     overflow-wrap: break-word;
@@ -50,7 +50,7 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: rgb(255, 100, 83);
+  background-color: rgb(68, 62, 62);
 }
 
 form {
@@ -67,3 +67,28 @@ form {
   height: 2rem;
   fill: white;
 }
+
+#plus {
+  height: 2rem;
+  width: 2rem;
+  fill: whitesmoke;
+}
+
+#priority {
+  display: flex;
+  justify-content: space-around;
+}
+/* #plus {
+  border: 12px solid whitesmoke;
+  border-radius: 10px;
+  fill: whitesmoke;
+  order: 1;
+  justify-content: bottom;
+  align-items: bottom;
+  box-shadow: 1px 1px 5px 1px black;
+
+  > svg {
+    scale: 43%;
+    align-self: bottom;
+  }
+} */
