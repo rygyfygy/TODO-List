@@ -1,6 +1,7 @@
 import TODO from "./TODO.js";
+import { differenceInCalendarDays, constructNow, parse, isToday  } from "date-fns";
 
-const renderTaskS = function (task) {
+const renderTask = function (task) {
   if (task instanceof TODO) {
     let addedNode = document.createElement("div");
     addedNode.className = "task";
@@ -16,7 +17,16 @@ const renderTaskS = function (task) {
 
     let dueDate = document.createElement("p");
     if (task.dueDate) {
-      dueDate.textContent = `Due: ${task.dueDate}`;
+      let rawDate = parse(task.dueDate, 'dd.MM.yyyy', new Date());
+      let daysLeft;
+      if (isToday(rawDate)) {
+        daysLeft = 'Today!';
+      } else {
+        const diff = differenceInCalendarDays(rawDate, new Date());
+        daysLeft = diff > 0 ? `${diff} days left` : `${Math.abs(diff)} days ago`;
+      }
+      dueDate.textContent = `Due: ${task.dueDate} (${daysLeft})`;
+
     }
 
     let priority = document.createElement("p");
@@ -30,4 +40,4 @@ const renderTaskS = function (task) {
     document.querySelector("#TODO").appendChild(addedNode);
   }
 };
-export default renderTaskS;
+export default renderTask;

@@ -13,10 +13,11 @@ const form = function () {
     const newTaskPriority = taskForm.elements.newTaskPriority.value;
     
     const added = new TODO(newTaskName);
-    added.dueDate = lightFormat(new Date(newTaskDue), "dd.MM.yyyy");
-    added.priority = newTaskPriority;
+    added.setDueDate(lightFormat(new Date(newTaskDue), "dd.MM.yyyy"));
+    added.setPriority(newTaskPriority);
+    
     renderTask(added);
-    projectStorage.addTask(added, "defaultProject");
+    projectStorage.updateTask(added, "defaultProject");
   });
 };
 
