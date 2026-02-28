@@ -1,5 +1,5 @@
 import TODO from "./TODO.js";
-import { differenceInCalendarDays, constructNow, parse, isToday  } from "date-fns";
+import { differenceInCalendarDays, parse, isToday  } from "date-fns";
 
 const renderTask = function (task) {
   if (task instanceof TODO) {
@@ -37,6 +37,20 @@ const renderTask = function (task) {
     addedNode.appendChild(info);
     addedNode.appendChild(dueDate);
     addedNode.appendChild(priority);
+
+    
+    // remove button // TO REFACTOR
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'delete';
+    deleteButton.className = 'deleteTaskButton'
+    addedNode.appendChild(deleteButton);
+    deleteButton.addEventListener('click', (evt) => {
+      evt.target.parentNode.parentNode.removeChild(evt.target.parentNode);
+    });
+    // TODO add edit button // TO REFACTOR
+
+
+
     document.querySelector("#TODO").appendChild(addedNode);
   }
 };

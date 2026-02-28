@@ -3,12 +3,12 @@ import renderTask from "./renderer.js";
 import projectStorage from "./storage.js";
 import { lightFormat } from "date-fns";
 
-const form = function () {
+const form = (function () {
   const taskForm = document.querySelector("#newTask");
 
   taskForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    const newTaskName = taskForm.elements.newTaskName.value;
+    const newTaskName =  taskForm.elements.newTaskName.value;
     const newTaskDue = taskForm.elements.newTaskDue.value;
     const newTaskPriority = taskForm.elements.newTaskPriority.value;
     
@@ -19,6 +19,6 @@ const form = function () {
     renderTask(added);
     projectStorage.updateTask(added, "defaultProject");
   });
-};
+})();
 
 export default form;
