@@ -47,7 +47,7 @@ const renderTask = function (task) {
     deleteButton.addEventListener('click', (evt) => {
       evt.target.parentNode.parentNode.removeChild(evt.target.parentNode);
     });
-    // TODO add edit button // TO REFACTOR
+    // TODO add edit button // TO REFACTOR  
 
 
 

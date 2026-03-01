@@ -1,9 +1,12 @@
+/* eslint-disable no-unused-vars */
+import form from "./form.js";
 import "./styles.css";
 import TODO from "./TODO.js";
-// import Project from "./projects.js";
+import Project from "./projects.js";
 import renderTask from "./renderer.js";
 import projectStorage from "./storage.js";
-import "./form.js";
+import domTasks from "./domEvents.js";
+
 
 
 projectStorage.init();

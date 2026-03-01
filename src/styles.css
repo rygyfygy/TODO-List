@@ -47,10 +47,11 @@ body {
 }
 
 header {
+  z-index: 10;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: rgb(68, 62, 62);
+  background-color: rgb(67, 57, 57);
 }
 
 form {
@@ -72,12 +73,51 @@ form {
   height: 2rem;
   width: 2rem;
   fill: whitesmoke;
+  padding: 1rem;
+
+
+}
+#plus:hover{
+  background-color: rgb(39, 39, 39);
+  transition: background-color 0.1s
 }
 
 #priority {
   display: flex;
   justify-content: space-around;
 }
+
+#blank {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 100%;
+  height: stretch;
+  background-color: rgba(128, 128, 128, 0.655);
+  padding: 5rem;
+  align-items: center;
+  justify-content: center;
+  z-index: 9;
+}
+
+#newTask {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-self: self-start;
+  justify-self: center;
+  width: 500px;
+  flex-grow: 0;
+  z-index: 10;
+  background-color: rgb(67, 57, 57);
+  padding: 2rem;
+  /* border: 20px solid rgba(203, 186, 186, 0.029); */
+  /* box-shadow: 0 0 10px 50rem rgba(111, 106, 106, 0.715); */
+  >input {
+    margin-bottom: 20px;
+  }
+}
+
 /* #plus {
   border: 12px solid whitesmoke;
   border-radius: 10px;
@@ -92,3 +132,4 @@ form {
     align-self: bottom;
   }
 } */
+
