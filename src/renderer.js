@@ -1,5 +1,6 @@
 import TODO from "./TODO.js";
-import { differenceInCalendarDays, parse, isToday  } from "date-fns";
+import { differenceInCalendarDays, parse, isToday } from "date-fns";
+import projectStorage from "./storage.js";
 
 const renderTask = function (task) {
   if (task instanceof TODO) {
@@ -17,16 +18,16 @@ const renderTask = function (task) {
 
     let dueDate = document.createElement("p");
     if (task.dueDate) {
-      let rawDate = parse(task.dueDate, 'dd.MM.yyyy', new Date());
+      let rawDate = parse(task.dueDate, "dd.MM.yyyy", new Date());
       let daysLeft;
       if (isToday(rawDate)) {
-        daysLeft = 'Today!';
+        daysLeft = "Today!";
       } else {
         const diff = differenceInCalendarDays(rawDate, new Date());
-        daysLeft = diff > 0 ? `${diff} days left` : `${Math.abs(diff)} days ago`;
+        daysLeft =
+          diff > 0 ? `${diff} days left` : `${Math.abs(diff)} days ago`;
       }
       dueDate.textContent = `Due: ${task.dueDate} (${daysLeft})`;
-
     }
 
     let priority = document.createElement("p");
@@ -38,18 +39,17 @@ const renderTask = function (task) {
     addedNode.appendChild(dueDate);
     addedNode.appendChild(priority);
 
-    
-    // remove button // TO REFACTOR
-    const deleteButton = document.createElement('button');
-    deleteButton.textContent = 'delete';
-    deleteButton.className = 'deleteTaskButton'
+    // delete button // TO REFACTOR
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "delete";
+    deleteButton.className = "deleteTaskButton";
     addedNode.appendChild(deleteButton);
-    deleteButton.addEventListener('click', (evt) => {
+    deleteButton.addEventListener("click", (evt) => {
       evt.target.parentNode.parentNode.removeChild(evt.target.parentNode);
+      // TEMPORARY / TODO: ID / link
+      projectStorage.deleteTask(task, "defaultProject");
     });
-    // TODO add edit button // TO REFACTOR  
-
-
+    // TODO add edit button // TO REFACTOR
 
     document.querySelector("#TODO").appendChild(addedNode);
   }

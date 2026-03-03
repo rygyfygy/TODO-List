@@ -36,6 +36,13 @@ const projectStorage = {
     changedProject.tasks.push(task);
     localStorage.setItem("projects", JSON.stringify(projects));
   },
+
+  deleteTask: function (task, projectName) {
+    const projects = this.getProjects();
+    const changedProject = projects.find((item) => item.title === projectName);
+    changedProject.tasks.splice(changedProject.tasks.indexOf(task),1);
+    localStorage.setItem("projects", JSON.stringify(projects));
+  }
 };
 
 export default projectStorage;
