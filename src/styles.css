@@ -74,12 +74,13 @@ form {
   width: 2rem;
   fill: whitesmoke;
   padding: 1rem;
-
+  background-color: rgb(67, 57, 57);
+  transition: background-color 0.1s;
 
 }
 #plus:hover{
   background-color: rgb(39, 39, 39);
-  transition: background-color 0.1s
+  transition: background-color 0.1s;
 }
 
 #priority {
