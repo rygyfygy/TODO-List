@@ -6,7 +6,7 @@ const renderTask = function (task) {
   if (task instanceof TODO) {
     let addedNode = document.createElement("div");
     addedNode.className = "task";
-
+    addedNode.id = task.id; // DOM-STORAGE LINK
     let header = document.createElement("h3");
     header.textContent = task.title;
     addedNode.appendChild(header);

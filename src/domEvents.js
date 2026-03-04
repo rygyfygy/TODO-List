@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-import "./template.html";
 import newTaskPopUp from "./newTaskPopUp.js";
 
 const DOMTasks = (() => {

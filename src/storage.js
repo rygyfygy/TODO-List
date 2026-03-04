@@ -16,10 +16,10 @@ const projectStorage = {
         project.tasks.forEach((task) => {
           // Recreate TODO instance from plain object
           let todo = new TODO(task.title);
-            const { description, dueDate, priority } = task;
-            todo.setDescription(description);
-            todo.setDueDate(dueDate);
-            todo.setPriority(priority);
+          const { description, dueDate, priority } = task;
+          todo.setDescription(description);
+          todo.setDueDate(dueDate);
+          todo.setPriority(priority);
           renderTask(todo);
         });
       });
@@ -30,19 +30,23 @@ const projectStorage = {
     return JSON.parse(localStorage.getItem("projects"));
   },
 
-  updateTask: function (task, projectName) {
+  addTask: function (task, projectName) {
     const projects = this.getProjects();
-    const changedProject = projects.find((item) => item.title === projectName);
+    const changedProject = projects.find(
+      (project) => project.title === projectName,
+    );
     changedProject.tasks.push(task);
     localStorage.setItem("projects", JSON.stringify(projects));
   },
 
   deleteTask: function (task, projectName) {
     const projects = this.getProjects();
-    const changedProject = projects.find((item) => item.title === projectName);
-    changedProject.tasks.splice(changedProject.tasks.indexOf(task),1);
+    const changedProject = projects.find(
+      (project) => project.title === projectName,
+    );
+    changedProject.tasks.splice(changedProject.tasks.indexOf(task), 1);
     localStorage.setItem("projects", JSON.stringify(projects));
-  }
+  },
 };
 
 export default projectStorage;

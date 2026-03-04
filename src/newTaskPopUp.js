@@ -1,5 +1,3 @@
-import form from "./form.js";
-
 const newTaskPopUp = function () {
   if (document.querySelector("#newTask") === null) {
     let newTaskContainer = document.createElement("div");
@@ -40,13 +38,12 @@ const newTaskPopUp = function () {
     let blank = document.createElement("div");
     blank.id = "blank";
     blank.appendChild(newTaskContainer);
-
     document.body.insertBefore(blank, document.querySelector("#TODO"));
-     document.querySelector("#TODO").style.filter = 'blur(5px)';
-      form();
+    document.querySelector("#TODO").style.filter = "blur(5px)";
+    document.dispatchEvent(new CustomEvent("newTaskPopupOpened"));
   } else {
-      document.querySelector("#blank").remove();
-      document.querySelector("#TODO").style.removeProperty('filter');
+    document.querySelector("#blank").remove();
+    document.querySelector("#TODO").style.removeProperty("filter");
   }
 };
 
