@@ -40,6 +40,7 @@ const newTaskPopUp = function () {
     blank.appendChild(newTaskContainer);
     document.body.insertBefore(blank, document.querySelector("#TODO"));
     document.querySelector("#TODO").style.filter = "blur(5px)";
+
     document.dispatchEvent(new CustomEvent("newTaskPopupOpened"));
   } else {
     document.querySelector("#blank").remove();

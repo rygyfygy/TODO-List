@@ -43,15 +43,18 @@ const renderTask = function (task) {
     const deleteButton = document.createElement("button");
     deleteButton.textContent = "delete";
     deleteButton.className = "deleteTaskButton";
+    deleteButton.type = "button";
     addedNode.appendChild(deleteButton);
-    deleteButton.addEventListener("click", (evt) => {
-      evt.target.parentNode.parentNode.removeChild(evt.target.parentNode);
-      // TEMPORARY / TODO: ID / link
-      projectStorage.deleteTask(task, "defaultProject");
-    });
+
+    // deleteButton.addEventListener("click", (evt) => {
+    //   evt.target.parentNode.parentNode.removeChild(evt.target.parentNode);
+    //   // TEMPORARY / TODO: ID / link
+    //   projectStorage.deleteTask(task, "defaultProject");
+    // });
     // TODO add edit button // TO REFACTOR
 
     document.querySelector("#TODO").appendChild(addedNode);
+    document.dispatchEvent(new CustomEvent("taskRendered"));
   }
 };
 export default renderTask;

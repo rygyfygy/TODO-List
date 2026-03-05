@@ -7,22 +7,30 @@ import projectStorage from "./storage.js";
 import domTasks from "./domEvents.js";
 import { lightFormat } from "date-fns";
 
-
 const controller = (() => {
-
   const handleNewTask = ({ title, dueDate, priority }) => {
     const task = new TODO(title);
-
     if (dueDate) task.setDueDate(lightFormat(new Date(dueDate), "dd.MM.yyyy"));
     if (priority) task.setPriority(priority);
-
     projectStorage.addTask(task, "defaultProject");
     renderTask(task);
   };
-
   document.addEventListener("newTaskPopupOpened", () => {
     form.bindAddTask(handleNewTask);
   });
-})();
 
+  const handleDeleteTask = () => {
+    let deleteButtons = document.querySelectorAll(".deleteTaskButton");
+    deleteButtons.forEach((button) => {
+      button.addEventListener("click", (event) => {
+        let taskContainerToDelete = button.parentNode;
+        projectStorage.deleteTask(taskContainerToDelete.id);
+        taskContainerToDelete.remove();
+      });
+    });
+  };
+  document.addEventListener("taskRendered", () => handleDeleteTask());
+
+  
+})();
 export default controller;
