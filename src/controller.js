@@ -8,6 +8,11 @@ import domTasks from "./domEvents.js";
 import { lightFormat } from "date-fns";
 
 const controller = (() => {
+  const renderAllTasksSavedInTheMemory = () => {
+    projectStorage.foreach(task => renderTask(task));
+  }
+
+
   const handleNewTask = ({ title, dueDate, priority }) => {
     const task = new TODO(title);
     if (dueDate) task.setDueDate(lightFormat(new Date(dueDate), "dd.MM.yyyy"));
@@ -31,6 +36,6 @@ const controller = (() => {
   };
   document.addEventListener("taskRendered", () => handleDeleteTask());
 
-  
+
 })();
 export default controller;

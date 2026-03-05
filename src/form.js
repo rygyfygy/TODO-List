@@ -11,7 +11,7 @@ const form = {
 
       if (!title) return;
 
-      handler({ title, dueDate, priority }); // just emit data
+      handler({ title, dueDate, priority });
 
       const blank = document.querySelector("#blank");
       if (blank) blank.remove();
