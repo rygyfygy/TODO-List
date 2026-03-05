@@ -1,6 +1,5 @@
 import TODO from "./TODO.js";
 import { differenceInCalendarDays, parse, isToday } from "date-fns";
-import projectStorage from "./storage.js";
 
 const renderTask = function (task) {
   if (task instanceof TODO) {
