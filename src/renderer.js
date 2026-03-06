@@ -1,4 +1,4 @@
-import TODO from "./TODO.js";
+import TODO from "./TODO.js"; // for instanceof validation 
 import { differenceInCalendarDays, parse, isToday } from "date-fns";
 
 const renderTask = function (task) {

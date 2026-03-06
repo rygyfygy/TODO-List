@@ -6,12 +6,13 @@ import renderTask from "./renderer.js";
 import projectStorage from "./storage.js";
 import domTasks from "./domEvents.js";
 import { lightFormat } from "date-fns";
+import navBar from "./navBar.js";
 
 const controller = (() => {
-  const renderAllTasksSavedInTheMemory = () => {
-    projectStorage.foreach(task => renderTask(task));
-  }
-
+  //  const renderAllTasksSavedInTheMemory = (() => {
+  //    projectStorage.init.foreach((task) => renderTask(task));
+  //  })();
+  
 
   const handleNewTask = ({ title, dueDate, priority }) => {
     const task = new TODO(title);
@@ -33,8 +34,42 @@ const controller = (() => {
         taskContainerToDelete.remove();
       });
     });
-  };
+  }; 
   document.addEventListener("taskRendered", () => handleDeleteTask());
+
+  const renderAll = (() => {
+    let toRender = projectStorage.init();
+    toRender.forEach((task) => renderTask(task));
+  })(); 
+
+  const renderProjects = (() => {
+    let projectsList = document.querySelector("#projectsList");
+    projectStorage.getProjects().map((projectData) => {
+      let renderedProject = document.createElement("li");
+      renderedProject.textContent = projectData.title;
+      projectsList.appendChild(renderedProject);
+    })
+  })();
+
+  const newProject = (() => {
+    let newProject = document.querySelector("#addProject");
+    newProject.addEventListener("click", () => {
+      let newProjectPrompt = document.createElement("div");
+      newProjectPrompt.id = "newProjectContainer";
+      newProjectPrompt.innerHTML = `<form id="newProject">
+        <label for="projectInput">Add a new project:</label>
+        <input
+          type="text"
+          id="projectInput"
+          name="projectInput"
+          placeholder="Enter project name"
+          required
+        />
+        <button type="submit">add</button>
+      </form>`;
+      document.body.append(newProjectPrompt);
+    });
+  })();
 
 
 })();

@@ -1,136 +1,263 @@
 @font-face {
-  font-family: "Anek Devanagari";
-  src: url("./anek-devanagari-v17-latin-regular.woff2") format("woff2");
-  font-style: normal;
+	font-family: "Anek Devanagari";
+	src: url("./anek-devanagari-v17-latin-regular.woff2") format("woff2");
+	font-style: normal;
+}
+
+:root {
+	--main-color: rgb(67, 57, 57);
+	--bg-color: rgb(39, 39, 39);
 }
 
 html {
-  font-family: "Anek Devanagari";
+	font-family: "Anek Devanagari";
 }
 
 body {
-  background-color: rgb(39, 39, 39);
-  margin: 0;
+	background-color: rgb(39, 39, 39);
+	margin: 0;
+}
+
+svg {
+	fill: whitesmoke;
 }
 
 #TODO {
-  margin: 0;
-  padding-top: 3rem;
-  justify-self: center;
-  margin: 1em 1em 1em 1em;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
-  row-gap: 1rem;
-  column-gap: 4rem;
+	margin: 0;
+	padding-top: 3rem;
+	justify-self: center;
+	margin: 1em 1em 1em 1em;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: auto;
+	row-gap: 1rem;
+	column-gap: 4rem;
 
-  & .task {
-    justify-self: center;
-    background-color: rgb(245, 245, 245);
-    padding: 2rem;
-    width: 11rem;
-    height: 13rem;
-    border-radius: 6px;
-    box-shadow: 1px 1px 5px 1px black;
-    font-size: small;
-    overflow-wrap: break-word;
+	& .task {
+		justify-self: center;
+		background-color: rgb(245, 245, 245);
+		padding: 2rem;
+		width: 11rem;
+		height: 13rem;
+		border-radius: 6px;
+		box-shadow: 1px 1px 5px 1px black;
+		font-size: small;
+		overflow-wrap: break-word;
 
-    & h3 {
-      margin: 0;
-    }
+		& h3 {
+			margin: 0;
+		}
 
-    p {
-      font-size: small;
-      overflow-wrap: break-word;
-    }
-  }
+		p {
+			font-size: small;
+			overflow-wrap: break-word;
+		}
+	}
 }
 
 header {
-  z-index: 10;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: rgb(67, 57, 57);
+	z-index: 10;
+	display: flex;
+	justify-content: space-between;
+	padding: 0 5rem 0 5rem;
+	align-items: center;
+	background-color: rgb(67, 57, 57);
 }
 
 form {
-  margin: 1rem;
-  color: whitesmoke;
+	margin: 1rem;
+	color: whitesmoke;
 
-  > label {
-    color: whitesmoke;
-    font-weight: 600;
-  }
+	> label {
+		color: whitesmoke;
+		font-weight: 600;
+	}
 }
 
 #hamburger {
-  height: 2rem;
-  fill: white;
+	height: 2rem;
+	fill: white;
 }
 
 #plus {
-  height: 2rem;
-  width: 2rem;
-  fill: whitesmoke;
-  padding: 1rem;
-  background-color: rgb(67, 57, 57);
-  transition: background-color 0.1s;
-
+	height: 2rem;
+	width: 2rem;
+	fill: whitesmoke;
+	padding: 1rem;
+	background-color: rgb(67, 57, 57);
+	transition: background-color 0.1s;
 }
-#plus:hover{
-  background-color: rgb(39, 39, 39);
-  transition: background-color 0.1s;
-}
-
-#priority {
-  display: flex;
-  justify-content: space-around;
+#plus:hover {
+	background-color: rgb(39, 39, 39);
+	transition: background-color 0.1s;
 }
 
 #blank {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 0);
-  width: 100%;
-  height: stretch;
-  background-color: rgba(128, 128, 128, 0.655);
-  padding: 5rem;
-  align-items: center;
-  justify-content: center;
-  z-index: 9;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0);
+	width: 100vw;
+	height: stretch;
+	background-color: rgba(128, 128, 128, 0.655);
+	align-items: center;
+	justify-content: center;
+	z-index: 9;
+}
+
+#newTaskContainer {
+	width: 50%;
+	align-self: top;
+	justify-self: center;
+	margin-top: 5rem;
 }
 
 #newTask {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-self: self-start;
-  justify-self: center;
-  width: 500px;
-  flex-grow: 0;
-  z-index: 10;
-  background-color: rgb(67, 57, 57);
-  padding: 2rem;
-  /* border: 20px solid rgba(203, 186, 186, 0.029); */
-  /* box-shadow: 0 0 10px 50rem rgba(111, 106, 106, 0.715); */
-  >input {
-    margin-bottom: 20px;
-  }
+	font-weight: bold;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-self: self-start;
+	justify-self: center;
+	width: 500px;
+	flex-grow: 0;
+	z-index: 10;
+	background-color: rgb(67, 57, 57);
+	padding: 2rem;
+	/* border: 20px solid rgba(203, 186, 186, 0.029); */
+	/* box-shadow: 0 0 10px 50rem rgba(111, 106, 106, 0.715); */
+	> input {
+		margin-bottom: 1rem;
+	}
+	fieldset {
+		margin-bottom: 1rem;
+		padding: 5px;
+	}
+	> button {
+		width: 7rem;
+		height: 3rem;
+		align-self: center;
+	}
 }
 
-/* #plus {
-  border: 12px solid whitesmoke;
-  border-radius: 10px;
-  fill: whitesmoke;
-  order: 1;
-  justify-content: bottom;
-  align-items: bottom;
-  box-shadow: 1px 1px 5px 1px black;
+#priority {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	justify-items: center;
+	align-content: center;
+	height: 50px;
+	padding-bottom: 10px;
 
-  > svg {
-    scale: 43%;
-    align-self: bottom;
-  }
-} */
+	> div {
+		font-size: large;
+		display: flex;
+		flex-grow: 1 1 auto;
+		height: 50px;
+		width: 100%;
+		border-radius: 10px;
 
+		input {
+			appearance: none;
+		}
+
+		> label {
+			width: 100%;
+			height: 100%;
+			text-align: center;
+			align-content: center;
+		}
+	}
+
+	div:has(label[for="newTaskPriorityL"]) {
+		color: green;
+
+		&:has(input:checked) {
+			background-color: green;
+			color: black;
+			transition:
+				background-color 0.1s,
+				color 0.1s;
+		}
+	}
+	div:has(label[for="newTaskPriorityM"]) {
+		color: yellow;
+
+		&:has(input:checked) {
+			background-color: yellow;
+			color: black;
+			transition:
+				background-color 0.1s,
+				color 0.1s;
+		}
+	}
+	div:has(label[for="newTaskPriorityH"]) {
+		color: red;
+
+		&:has(input:checked) {
+			background-color: red;
+			color: black;
+			transition:
+				background-color 0.1s,
+				color 0.1s;
+		}
+	}
+}
+legend {
+	font-weight: bold;
+}
+
+nav {
+	color: whitesmoke;
+	display: flex;
+	flex-flow: column;
+	justify-content: baseline;
+	background-color: rgb(49, 49, 49);
+	border-right: 1px solid black;
+	box-shadow: 0px 0px 3px 0px black;
+	position: fixed;
+	height: 100vh;
+	width: 20%;
+	top: 0;
+
+	h1 {
+		margin-bottom: 0.5rem;
+		letter-spacing: 0.1rem;
+		justify-self: flex-start;
+		align-self: center;
+	}
+
+	div {
+		box-shadow: inset 0 0 3px 0 black;
+
+		h3 {
+			padding: 1rem 2rem 0.5rem 2rem;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			button {
+				height: 2rem;
+				width: 2rem;
+				background-color: transparent;
+				padding: 0;
+				border: 0;
+				
+				svg {
+					size: 2rem; 
+					height: 75%;
+					
+				}
+			}
+		}
+		ul {
+			list-style-type: none;
+		}
+	}
+
+	#newProjectContainer {
+		position: fixed;
+		top: 5rem;
+		left: 5rem;
+		height: 5rem;
+		width: 10rem;
+	}
+}

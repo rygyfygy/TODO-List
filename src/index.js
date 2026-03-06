@@ -6,7 +6,9 @@ import Project from "./projects.js";
 import renderTask from "./renderer.js";
 import projectStorage from "./storage.js";
 import domTasks from "./domEvents.js";
+import navBar from "./navBar.js";
 import controller from "./controller.js";
+
 
 
 
