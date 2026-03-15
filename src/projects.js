@@ -1,16 +1,22 @@
 // Project item
-const Project = function (title) {
-  this.title = title;
-  this.tasks = [];
+class Project {
+	constructor(title) {
+		this.title = title;
+		this.tasks = [];
+		this.id = crypto.randomUUID();
+	}
+	// Add/set property methods
+	description(value) {
+		this.description = value;
+		return this;
+	}
+	addTask(taskName) {
+		this.tasks.push(taskName);
+		return this;
+	}
+	removeTask(taskID) {
+		this.tasks = this.tasks.filter((task) => task.id != taskID);
+	}
+}
 
-  // Add/set property methods
-  Project.prototype.description = function (value) {
-    this.description = value;
-    return this;
-  };
-  Project.prototype.addTask = function (task) {
-    this.tasks.push(task);
-    return this;
-  };
-};
 export default Project;

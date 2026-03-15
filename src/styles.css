@@ -23,45 +23,70 @@ svg {
 }
 
 #TODO {
-	margin: 0;
-	padding-top: 3rem;
+	padding: 6rem 5rem 5rem 20rem;
 	justify-self: center;
-	margin: 1em 1em 1em 1em;
+	margin: 2em;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: auto;
 	row-gap: 1rem;
 	column-gap: 4rem;
+	position: relative;
 
-	& .task {
-		justify-self: center;
+	.task {
+		display: flex;
+		flex-flow: column nowrap;
+		flex-grow: 0;
+		justify-self: space-around;
+		gap: 15px;
 		background-color: rgb(245, 245, 245);
-		padding: 2rem;
-		width: 11rem;
-		height: 13rem;
+		padding: 1.5rem;
+		width: 13rem;
+		height: 12rem;
 		border-radius: 6px;
 		box-shadow: 1px 1px 5px 1px black;
 		font-size: small;
-		overflow-wrap: break-word;
+		flex: 1 1 0;
 
-		& h3 {
+		h3 {
 			margin: 0;
+			padding: 5px;
+			height: 1rem;
 		}
 
 		p {
+			margin-top: 0;
 			font-size: small;
 			overflow-wrap: break-word;
+			height: 2rem;
+		}
+
+		button {
+			align-self: flex-end;
+			justify-self: flex-end;
+			height: 2rem;
 		}
 	}
 }
 
 header {
-	z-index: 10;
+	position: fixed;
+	z-index: 1;
 	display: flex;
+	flex: 1 1 auto;
+	width: stretch;
+	top: 0;
+	left: 20%;
 	justify-content: space-between;
 	padding: 0 5rem 0 5rem;
 	align-items: center;
 	background-color: rgb(67, 57, 57);
+	color: white;
+	font-size: larger;
+	box-shadow: 0 10px 10px -10px black;
+	h3 {
+		margin: 0;
+	}
 }
 
 form {
@@ -208,7 +233,7 @@ legend {
 nav {
 	color: whitesmoke;
 	display: flex;
-	flex-flow: column;
+	flex-flow: column nowrap;
 	justify-content: baseline;
 	background-color: rgb(49, 49, 49);
 	border-right: 1px solid black;
@@ -217,9 +242,11 @@ nav {
 	height: 100vh;
 	width: 20%;
 	top: 0;
+	z-index: 2;
 
 	h1 {
-		margin-bottom: 0.5rem;
+		margin-top: 0.45rem;
+		margin-bottom: 0.1rem;
 		letter-spacing: 0.1rem;
 		justify-self: flex-start;
 		align-self: center;
@@ -228,24 +255,21 @@ nav {
 	div {
 		box-shadow: inset 0 0 3px 0 black;
 
-		h3 {
-			padding: 1rem 2rem 0.5rem 2rem;
+		span {
 			display: flex;
-			justify-content: space-between;
+			flex-wrap: nowrap;
+			justify-content: space-around;
 			align-items: center;
+			gap: 50px;
 
 			button {
 				height: 2rem;
 				width: 2rem;
 				background-color: transparent;
-				padding: 0;
 				border: 0;
-				
-				svg {
-					size: 2rem; 
-					height: 75%;
-					
-				}
+				max-height: 3rem;
+				max-width: 3rem;
+				padding: 0;
 			}
 		}
 		ul {
@@ -254,10 +278,20 @@ nav {
 	}
 
 	#newProjectContainer {
-		position: fixed;
-		top: 5rem;
-		left: 5rem;
-		height: 5rem;
-		width: 10rem;
+		display: flex;
+		justify-content: center;
+		gap: 1rem;
 	}
+}
+
+.projectButton {
+	font-size: large;
+	color: inherit;
+	font-family: inherit;
+	background-color: transparent;
+	border: 0;
+}
+
+.projectButton:hover {
+	color: rgb(130, 97, 97);
 }
